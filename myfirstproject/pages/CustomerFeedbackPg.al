@@ -5,8 +5,8 @@ page 50104 "Customer Feedback List"
     SourceTable = "Customer Feedback";
     ApplicationArea = All; // Available in all application areas
     UsageCategory = Lists; // Categorized under "Lists" in the role center
-    // Explicitly allow editing (optional, default is editable)
     Editable = true;
+    CardPageId = "Customer Feedback Card";
 
     layout
     {
@@ -27,20 +27,27 @@ page 50104 "Customer Feedback List"
     {
         area(processing)
         {
-            action("Open Card")
+            action("Open Feedback Card")
             {
                 ApplicationArea = All;
-                Caption = 'Open Card Page';
+                Caption = 'Open Card';
                 RunObject = page "Customer Feedback Card";
-                RunPageMode = Edit; // Opens in edit mode
+                RunPageMode = Edit; // You can use View or Edit
+            }
+            action(AddSampleFeedback)
+            {
+                Caption = 'Add Sample Feedback';
                 trigger OnAction()
                 var
-                    RecFeedback: Record "Customer Feedback";
+                    FeedbackHandler: Codeunit "Feedback Handler";
+                    NewEntryNo: Integer;
                 begin
-                    RecFeedback.Insert(); // <-- This should trigger OnInsert()
+                    NewEntryNo := FeedbackHandler.AddFeedback('C0001', 'Awesome service!');
+                    Message('Feedback added with Entry No.: %1', NewEntryNo);
                 end;
             }
         }
     }
+
 
 }
