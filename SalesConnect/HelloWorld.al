@@ -6,7 +6,7 @@
 
 // using Microsoft.Sales.Customer;
 
-// pageextension 50140 CustomerListExt extends "Customer List"
+// pageextension 50141 CustomerListExt extends "Customer List"
 // {
 //     trigger OnOpenPage();
 //     begin
