@@ -1,0 +1,39 @@
+# AL language package cache
+.alpackages/
+
+# VS Code settings and workspace config
+.vscode/
+
+# User-specific files
+*.user
+*.vsix
+
+# Build output (if you use build pipelines)
+*.app
+
+# AL Test output
+*.code-workspace
+
+# Node modules (if any JS/NPM tools used)
+node_modules/
+
+# Mac OS files
+.DS_Store
+
+# Windows Thumbs.db
+Thumbs.db
+
+# Docker artifacts
+docker-compose.override.yml
+*.bak
+*.log
+
+# Other temp files
+~$*
+*.tmp
+
+# Lock files
+*.lock.json
+
+# Launch config with personal settings
+launch.json
